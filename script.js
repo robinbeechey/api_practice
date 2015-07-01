@@ -13,7 +13,7 @@ $(function() {
     return number;
   };
 
-  $('#randomize').on('click', function() {  
+    $('#randomize').on('click', function buttonclick() {  
     var dribblePluck = "http://api.dribbble.com/shots/"+ getRandomNumber()
     $.ajax({
         url: dribblePluck,
@@ -28,7 +28,8 @@ $(function() {
                 content += '<p class="text-center"><img class="text-center" src="' + response.image_url + '" alt="' + response.title + '"></p>';        
             $(".box").html(content);
         }, 
-          error: function() {          
+          error: function() {
+              buttonclick();     
           console.log("no");
           }
     });
